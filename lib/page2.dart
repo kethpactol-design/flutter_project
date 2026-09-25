@@ -82,20 +82,19 @@ class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Text("Facebook Imitation"),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              margin: EdgeInsets.only(top: 20, bottom: 20, right: 20, left: 10),
-              alignment: Alignment.centerLeft,
-              child: Text("Facebook Imitation",
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -120,7 +119,7 @@ class _SecondPageState extends State<SecondPage> {
 
             PostCon(
                 "assets/image/images (3).jpg",
-                "Guy",
+                "Madara",
                 "I Madara declare you the strongest of them all!",
                 "assets/image/images (2).jpg"
             ),

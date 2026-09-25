@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mynewapp/page2.dart';
 
 class FourthPage extends StatefulWidget {
   @override
@@ -71,10 +72,19 @@ class _FourthPageState extends State<FourthPage> {
               username=sampleText.text;
               password=sampleText2.text;
             });
-          }, child: Text("Login")),
 
-          Text(username),
-          Text(password),
+            if (username == "Nostalgic" && password == "Nostalgic123") {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage()));
+            }
+            else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text("Wrong Username or Password"),
+                ),
+              );
+              print("Login Failed");
+            }
+          }, child: Text("Login")),
         ],
 
       ),
